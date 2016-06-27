@@ -6,6 +6,9 @@ apply plugin: 'com.jfrog.artifactory'
 ext {
     bintrayUser = resolveProperty( 'BINTRAY_USER', 'bintrayUser' )
     bintrayKey = resolveProperty( 'BINTRAY_KEY', 'bintrayKey' )
+    gradlePlugins = ["com.moowork.node:${project.group}:${project.name}",
+                     "com.moowork.grunt:${project.group}:${project.name}",
+                     "com.moowork.gulp:${project.group}:${project.name}"]
 }
 
 publishing {
@@ -37,7 +40,7 @@ bintray {
 
         version {
             vcsTag = "v$project.version"
-            attributes = ['gradle-plugin': ["com.moowork.node:${project.group}:${project.name}"]]
+            attributes = ['gradle-plugin': gradlePlugins]
         }
     }
 }
