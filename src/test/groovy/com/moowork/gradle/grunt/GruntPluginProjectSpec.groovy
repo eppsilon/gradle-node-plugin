@@ -1,31 +1,31 @@
 package com.moowork.gradle.grunt
 
+import com.moowork.gradle.AbstractProjectTest
+
 import java.util.concurrent.atomic.AtomicBoolean
-import nebula.test.PluginProjectSpec
 
-class GruntPluginProjectSpec extends PluginProjectSpec {
-    @Override
-    String getPluginName() {
-        return 'com.moowork.grunt'
-    }
-
-    def 'creates extension'() {
+class GruntPluginProjectSpec
+    extends AbstractProjectTest
+{
+    def 'creates extension'()
+    {
         when:
-        project.apply plugin: pluginName
+        project.apply plugin: 'com.moowork.grunt'
 
         then:
-        project.extensions.getByName('grunt')
+        project.extensions.getByName( 'grunt' )
     }
 
-    def 'can evaluate'() {
+    def 'can evaluate'()
+    {
         setup:
-        def signal = new AtomicBoolean(false)
+        def signal = new AtomicBoolean( false )
 
         project.afterEvaluate {
-            signal.getAndSet(true)
+            signal.getAndSet( true )
         }
 
-        project.apply plugin: pluginName
+        project.apply plugin: 'com.moowork.grunt'
 
         when:
         project.evaluate()

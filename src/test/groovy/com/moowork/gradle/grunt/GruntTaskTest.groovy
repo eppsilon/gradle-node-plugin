@@ -3,7 +3,7 @@ package com.moowork.gradle.grunt
 import org.gradle.api.GradleException
 
 class GruntTaskTest
-    extends AbstractTaskTest
+    extends AbstractGruntTaskTest
 {
     def "grunt not installed"()
     {

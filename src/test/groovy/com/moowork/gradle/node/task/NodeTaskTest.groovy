@@ -3,7 +3,7 @@ package com.moowork.gradle.node.task
 import org.gradle.process.ExecSpec
 
 class NodeTaskTest
-    extends AbstractTaskTest
+    extends AbstractNodeTaskTest
 {
     def "script not set"()
     {

@@ -3,7 +3,7 @@ package com.moowork.gradle.node.task
 import org.gradle.process.ExecSpec
 
 class NpmSetupTaskTest
-    extends AbstractTaskTest
+    extends AbstractNodeTaskTest
 {
     def "exec npmSetup task"()
     {

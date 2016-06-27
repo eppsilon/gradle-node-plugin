@@ -1,31 +1,31 @@
 package com.moowork.gradle.gulp
 
+import com.moowork.gradle.AbstractProjectTest
+
 import java.util.concurrent.atomic.AtomicBoolean
-import nebula.test.PluginProjectSpec
 
-class GulpPluginProjectSpec extends PluginProjectSpec {
-    @Override
-    String getPluginName() {
-        return 'com.moowork.gulp'
-    }
-
-    def 'creates extension'() {
+class GulpPluginProjectSpec
+    extends AbstractProjectTest
+{
+    def 'creates extension'()
+    {
         when:
-        project.apply plugin: pluginName
+        project.apply plugin: 'com.moowork.gulp'
 
         then:
-        project.extensions.getByName('gulp')
+        project.extensions.getByName( 'gulp' )
     }
 
-    def 'can evaluate'() {
+    def 'can evaluate'()
+    {
         setup:
-        def signal = new AtomicBoolean(false)
+        def signal = new AtomicBoolean( false )
 
         project.afterEvaluate {
-            signal.getAndSet(true)
+            signal.getAndSet( true )
         }
 
-        project.apply plugin: pluginName
+        project.apply plugin: 'com.moowork.gulp'
 
         when:
         project.evaluate()

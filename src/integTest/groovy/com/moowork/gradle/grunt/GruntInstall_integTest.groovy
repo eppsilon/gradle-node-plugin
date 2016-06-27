@@ -1,5 +1,7 @@
 package com.moowork.gradle.grunt
 
+import com.moowork.gradle.AbstractIntegTest
+
 class GruntInstall_integTest
     extends AbstractIntegTest
 {

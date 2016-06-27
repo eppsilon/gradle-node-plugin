@@ -1,5 +1,7 @@
 package com.moowork.gradle.gulp
 
+import com.moowork.gradle.AbstractIntegTest
+
 class Gulp_integTest
     extends AbstractIntegTest
 {

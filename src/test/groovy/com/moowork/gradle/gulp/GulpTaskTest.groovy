@@ -3,7 +3,7 @@ package com.moowork.gradle.gulp
 import org.gradle.api.GradleException
 
 class GulpTaskTest
-    extends AbstractTaskTest
+    extends AbstractGulpTaskTest
 {
     def "gulp not installed"()
     {

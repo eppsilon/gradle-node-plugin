@@ -1,7 +1,8 @@
-package com.moowork.gradle.grunt
+package com.moowork.gradle
 
 import com.moowork.gradle.node.NodeExtension
 import com.moowork.gradle.node.util.PlatformHelper
+import org.gradle.api.Project
 import org.gradle.process.ExecResult
 import org.gradle.process.ExecSpec
 
@@ -23,11 +24,13 @@ abstract class AbstractTaskTest
 
         this.execResult = Mock( ExecResult )
 
-        this.project.apply plugin: 'com.moowork.grunt'
+        setupProject( this.project )
         this.ext = NodeExtension.get( this.project )
 
         mockExec()
     }
+
+    def abstract setupProject( Project project );
 
     private void mockExec()
     {

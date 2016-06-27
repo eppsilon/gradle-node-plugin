@@ -1,4 +1,4 @@
-package com.moowork.gradle.grunt
+package com.moowork.gradle
 
 import nebula.test.ProjectSpec
 
